@@ -51,12 +51,12 @@
       content:"";
       position:fixed;
       inset:0;
-      background-image: url("assets/critical-insight-logo.png");
+      background-image: url("assets/cis-logo-transparent.png");
       background-repeat: no-repeat;
       background-position: center 55%;
       background-size: min(720px, 85vw);
       opacity: 0.035;
-      filter: grayscale(1) brightness(2);
+      filter: brightness(1.15);
       pointer-events:none;
       z-index:0;
     }
@@ -117,6 +117,13 @@
 
     /* Hero */
     .hero{padding:78px 0 34px;}
+
+    /* Center hero logo */
+    .hero-lockup{display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:18px;}
+    .hero-lockup img{height:140px; width:auto; display:block; filter: drop-shadow(0 22px 42px rgba(0,0,0,0.55)); opacity:0.98;}
+    @media (max-width: 560px){
+      .hero-lockup img{height:112px;}
+    }
     .hero-grid{display:grid; grid-template-columns: 1.2fr 0.8fr; gap:28px; align-items:stretch;}
 
     .hero-card{
@@ -302,7 +309,7 @@
     <div class="wrap inner">
       <div class="brand">
         <!-- Replace with your final CIS logo asset path -->
-        <img src="assets/critical-insight-logo.png" alt="Critical Insight Strategies" style="filter:brightness(1.35) saturate(0);" />
+        <img src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies" />
         <div class="name">
           <strong>Critical Insight Strategies</strong>
           <span>Clinician-led critical care deployment</span>
@@ -331,6 +338,9 @@
     <section class="hero" id="top">
       <div class="hero-grid">
         <div class="hero-card">
+          <div class="hero-lockup" aria-label="Critical Insight Strategies logo">
+            <img src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies" />
+          </div>
           <div class="kicker"><span class="dot"></span> High-acuity only • Clinician-designed deployment</div>
           <h1>Elite Travel PA Staffing for Trauma, ICU, Emergency & Hospital Medicine</h1>
           <p class="sub">Critical Insight Strategies delivers clinician-led coverage built for the sickest patients and the most demanding environments—designed and directed by a doctorate-trained, board-certified critical care PA.</p>
