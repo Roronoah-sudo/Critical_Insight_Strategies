@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Healthcare Facilities | Critical Insight Strategies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon-32x32.png">
+<meta name="description" content="Direct messaging for CMOs, Directors, and staffing offices: high-acuity gap coverage with clinician-led onboarding and predictable performance.">
+
+<style>
+    :root { --color-bg: #0a1a2e; --color-bg-alt: #071422; --color-header-bg: #071422; --color-footer-bg: #050f1a; --color-text: #C9D4E0; --color-text-strong: #FFFFFF; --color-accent: #3B82F6; --color-contact-border: #3B82F6; --color-button-text: #FFFFFF; }
+    body.dark-mode { --color-bg: #030712; --color-bg-alt: #020617; --color-header-bg: #020617; --color-footer-bg: #010409; --color-text: #E5E7EB; --color-text-strong: #F9FAFB; --color-accent: #60A5FA; --color-contact-border: #374151; --color-button-text: #020617; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--color-bg); color: var(--color-text); transition: background 0.35s ease, color 0.35s ease; }
+    a { color: inherit; }
+
+    header { background: var(--color-header-bg); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.4); z-index: 100; }
+    header a.logo-link { display: inline-flex; align-items: center; }
+    header img { height: 60px; transition: transform 0.25s ease; }
+    header img:hover { transform: translateY(-1px); }
+    nav { display: flex; align-items: center; }
+    nav a { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text); margin-left: 28px; text-decoration: none; font-size: 13px; transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; opacity: 0.9; }
+    nav a.active { color: var(--color-accent); opacity: 1; font-weight: 700; }
+    nav a:hover { color: var(--color-accent); transform: translateY(-1px); opacity: 1; }
+    .theme-toggle { margin-left: 28px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--color-accent); background: transparent; color: var(--color-accent); font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.14em; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+    .theme-toggle:hover { background: var(--color-accent); color: var(--color-button-text); transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; padding: 8px; margin-left: auto; cursor: pointer; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; margin: 4px 0; background: var(--color-text-strong); border-radius: 999px; transition: transform 0.2s ease, opacity 0.2s ease; }
+    body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    main { max-width: 1000px; margin: 50px auto 70px auto; padding: 0 20px; }
+    .crumbs { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; opacity: 0.75; margin-bottom: 12px; }
+    .crumbs a { text-decoration: none; color: var(--color-text); }
+    .crumbs a:hover { color: var(--color-accent); }
+    .crumbs span { margin: 0 4px; }
+    .pill { display: inline-block; border-radius: 999px; border: 1px solid rgba(59,130,246,0.6); padding: 4px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 12px; font-weight: 600; }
+    h1 { color: var(--color-text-strong); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 26px; margin: 0 0 8px 0; }
+    .subtitle { font-size: 14px; max-width: 720px; margin-bottom: 30px; line-height: 1.6; }
+
+    .info-card { background: var(--color-bg-alt); border-radius: 18px; border: 1px solid rgba(59,130,246,0.35); padding: 26px 24px; box-shadow: 0 10px 26px rgba(0,0,0,0.5); margin-bottom: 24px; }
+    .info-card h2 { margin: 0 0 12px 0; font-size: 18px; color: var(--color-text-strong); letter-spacing: 0.06em; text-transform: uppercase; }
+    .info-card h3 { font-size: 14px; color: var(--color-accent); margin: 16px 0 8px 0; letter-spacing: 0.06em; text-transform: uppercase; }
+    .info-card p { font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+    .info-card ul { margin: 0 0 12px 1.1rem; padding: 0; font-size: 14px; line-height: 1.6; }
+    .info-card li { margin-bottom: 6px; }
+
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+    .value-item { background: var(--color-bg-alt); border-radius: 16px; border: 1px solid rgba(59,130,246,0.25); padding: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+    .value-item h3 { font-size: 13px; color: var(--color-accent); margin: 0 0 8px 0; letter-spacing: 0.08em; text-transform: uppercase; }
+    .value-item p { font-size: 13px; line-height: 1.6; margin: 0; }
+
+    .cta-section { text-align: center; margin-top: 40px; padding: 40px; background: var(--color-bg-alt); border-radius: 18px; border: 1px solid rgba(59,130,246,0.3); }
+    .cta-section h2 { font-size: 20px; color: var(--color-text-strong); margin-bottom: 12px; }
+    .cta-section p { font-size: 14px; margin-bottom: 20px; }
+    .cta-btn { display: inline-block; background: var(--color-accent); color: var(--color-button-text); padding: 14px 32px; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+    .cta-btn:hover { background: #60A5FA; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+
+    footer { text-align: center; padding: 18px 20px 24px 20px; background: var(--color-footer-bg); border-top: 1px solid var(--color-contact-border); font-size: 11px; color: var(--color-text); letter-spacing: 0.08em; text-transform: uppercase; }
+    .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .footer-logo { height: 38px; }
+
+    @media (max-width: 900px) { .value-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 880px) {
+        header { padding: 12px 16px; }
+        .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+        header img { height: 50px; }
+        header nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--color-header-bg); padding: 10px 18px 16px 18px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; box-shadow: 0 8px 18px rgba(0,0,0,0.6); transform: translateY(-120%); opacity: 0; pointer-events: none; transition: transform 0.25s ease, opacity 0.25s ease; z-index: 90; }
+        body.nav-open header nav { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        header nav a, .theme-toggle { margin-left: 0; }
+        .theme-toggle { align-self: stretch; text-align: center; margin-top: 4px; }
+        main { margin-top: 40px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-link"><img id="headerLogo" src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies Logo"></a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="mission.html">Mission</a>
+    <a href="founder.html">Leadership</a>
+    <a href="services.html">Specialties</a>
+    <a href="facilities.html" class="active">For Facilities</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="contact.html">Request Coverage</a>
+    <button id="themeToggle" class="theme-toggle" type="button">Dark mode</button>
+  </nav>
+</header>
+
+<main>
+    <nav class="crumbs"><a href="index.html">Home</a><span>/</span><span>For Facilities</span></nav>
+    <div class="pill">Critical Insight Strategies</div>
+    <h1>For Healthcare Facilities</h1>
+    <div class="subtitle">Direct messaging for CMOs, Directors, and staffing offices: high-acuity gap coverage with clinician-led onboarding and predictable performance.</div>
+
+    <div class="info-card">
+        <h2>Use Cases</h2>
+        <ul>
+            <li><strong>Short-term crisis coverage</strong> — Immediate deployment for unexpected staffing gaps</li>
+            <li><strong>ICU overflow</strong> — Surge capacity for medical and surgical intensive care</li>
+            <li><strong>Trauma surge</strong> — Additional coverage during high-volume periods</li>
+            <li><strong>High-acuity gaps</strong> — Specialized coverage for your sickest patients</li>
+            <li><strong>Schedule stabilization</strong> — Predictable, reliable shift coverage</li>
+        </ul>
+
+        <h3>What You Gain</h3>
+        <p>Lower supervision burden • faster ramp-up • reduced adverse event risk • academic practice standards applied consistently in your environment.</p>
+
+        <h3>How We Deploy</h3>
+        <p>Clinician-led readiness validation, scope alignment, and credentialing-forward workflows. Every placement is reviewed by a doctorate-trained, board-certified critical care PA to ensure fit.</p>
+    </div>
+
+    <h2 style="color: var(--color-text-strong); font-size: 20px; margin-bottom: 16px;">Why This Model Works</h2>
+    <div class="value-grid">
+        <div class="value-item">
+            <h3>Lower Supervision Burden</h3>
+            <p>Credentialed, high-acuity PAs who integrate quickly into your existing workflows and require minimal orientation.</p>
+        </div>
+        <div class="value-item">
+            <h3>Faster Ramp-Up</h3>
+            <p>Clinician-led onboarding and readiness validation means your coverage is productive from day one.</p>
+        </div>
+        <div class="value-item">
+            <h3>Reduced Risk</h3>
+            <p>Academic-level practice standards and skill-matched deployment reduce adverse event risk in critical settings.</p>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Ready to Request Coverage?</h2>
+        <p>Streamlined intake for facilities. Tell us about your needs and we'll match you with deployment-ready clinicians.</p>
+        <a href="contact.html" class="cta-btn">Request Coverage</a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <img id="footerLogo" class="footer-logo" src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies Logo">
+        <div>© 2025 Critical Insight Strategies — Clinician-Led Critical Care Deployment</div>
+    </div>
+</footer>
+
+<script>
+  (function () {
+    const body = document.body, toggle = document.getElementById('themeToggle'), navToggle = document.getElementById('navToggle');
+    function applyTheme(theme) { const isDark = theme === 'dark'; body.classList.toggle('dark-mode', isDark); if (toggle) toggle.textContent = isDark ? 'Light mode' : 'Dark mode'; }
+    applyTheme(localStorage.getItem('cis-theme') === 'dark' ? 'dark' : 'light');
+    if (toggle) toggle.addEventListener('click', function () { const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark'; applyTheme(newTheme); localStorage.setItem('cis-theme', newTheme); });
+    if (navToggle) navToggle.addEventListener('click', function () { body.classList.toggle('nav-open'); });
+    document.querySelectorAll('header nav a').forEach(link => { link.addEventListener('click', () => { body.classList.remove('nav-open'); }); });
+  })();
+</script>
+</body>
+</html>

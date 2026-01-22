@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact & Deployment Requests | Critical Insight Strategies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon-32x32.png">
+<meta name="description" content="Request elite PA coverage or join our team. Streamlined intake for facilities and clinicians.">
+
+<style>
+    :root { --color-bg: #0a1a2e; --color-bg-alt: #071422; --color-header-bg: #071422; --color-footer-bg: #050f1a; --color-text: #C9D4E0; --color-text-strong: #FFFFFF; --color-accent: #3B82F6; --color-contact-border: #3B82F6; --color-button-text: #FFFFFF; }
+    body.dark-mode { --color-bg: #030712; --color-bg-alt: #020617; --color-header-bg: #020617; --color-footer-bg: #010409; --color-text: #E5E7EB; --color-text-strong: #F9FAFB; --color-accent: #60A5FA; --color-contact-border: #374151; --color-button-text: #020617; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--color-bg); color: var(--color-text); transition: background 0.35s ease, color 0.35s ease; }
+    a { color: inherit; }
+
+    header { background: var(--color-header-bg); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; box-shadow: 0 2px 12px rgba(0,0,0,0.4); z-index: 100; }
+    header a.logo-link { display: inline-flex; align-items: center; }
+    header img { height: 60px; transition: transform 0.25s ease; }
+    header img:hover { transform: translateY(-1px); }
+    nav { display: flex; align-items: center; }
+    nav a { font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text); margin-left: 28px; text-decoration: none; font-size: 13px; transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease; opacity: 0.9; }
+    nav a.active { color: var(--color-accent); opacity: 1; font-weight: 700; }
+    nav a:hover { color: var(--color-accent); transform: translateY(-1px); opacity: 1; }
+    .theme-toggle { margin-left: 28px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--color-accent); background: transparent; color: var(--color-accent); font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.14em; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+    .theme-toggle:hover { background: var(--color-accent); color: var(--color-button-text); transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: none; padding: 8px; margin-left: auto; cursor: pointer; }
+    .nav-toggle span { display: block; width: 20px; height: 2px; margin: 4px 0; background: var(--color-text-strong); border-radius: 999px; transition: transform 0.2s ease, opacity 0.2s ease; }
+    body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    main { max-width: 900px; margin: 40px auto 60px auto; padding: 0 20px; }
+    .crumbs { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; opacity: 0.75; margin-bottom: 10px; }
+    .crumbs a { text-decoration: none; color: var(--color-text); }
+    .crumbs a:hover { color: var(--color-accent); }
+    .crumbs span { margin: 0 4px; }
+    .pill { display: inline-block; border-radius: 999px; border: 1px solid rgba(59,130,246,0.6); padding: 4px 12px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 10px; font-weight: 600; }
+    h1 { color: var(--color-text-strong); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 26px; margin: 0 0 10px 0; }
+    .subtitle { font-size: 13px; margin-bottom: 30px; line-height: 1.6; }
+
+    .layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: flex-start; }
+    .copy-block p { font-size: 14px; line-height: 1.6; margin-bottom: 12px; }
+    .copy-block ul { font-size: 13px; margin-left: 1.1rem; margin-top: 4px; margin-bottom: 12px; }
+    .copy-block li { margin-bottom: 4px; }
+
+    .form-card { background: var(--color-bg-alt); border-radius: 16px; border: 1px solid rgba(59,130,246,0.35); padding: 24px; box-shadow: 0 10px 26px rgba(0,0,0,0.5); }
+    .form-card h2 { font-size: 18px; margin: 0 0 16px 0; color: var(--color-text-strong); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    .field-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 6px; color: var(--color-text-strong); font-weight: 600; display: block; }
+    .field-group { margin-bottom: 16px; }
+    input, select, textarea { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid rgba(59,130,246,0.3); background: rgba(0,0,0,0.2); color: var(--color-text); font-size: 14px; font-family: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+    textarea { resize: vertical; min-height: 100px; }
+    select { cursor: pointer; }
+
+    .submit-btn { width: 100%; padding: 14px; border-radius: 999px; border: none; background: var(--color-accent); color: var(--color-button-text); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; margin-top: 8px; }
+    .submit-btn:hover { background: #60A5FA; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.35); }
+    .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+    .status-box { margin-top: 12px; font-size: 13px; padding: 12px; border-radius: 8px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); display: none; }
+    .status-box.visible { display: block; }
+
+    footer { text-align: center; padding: 18px 20px 24px 20px; background: var(--color-footer-bg); border-top: 1px solid var(--color-contact-border); font-size: 11px; color: var(--color-text); letter-spacing: 0.08em; text-transform: uppercase; }
+    .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .footer-logo { height: 38px; }
+
+    @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+    @media (max-width: 880px) {
+        header { padding: 12px 16px; }
+        .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+        header img { height: 50px; }
+        header nav { position: fixed; top: 64px; left: 0; right: 0; background: var(--color-header-bg); padding: 10px 18px 16px 18px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; box-shadow: 0 8px 18px rgba(0,0,0,0.6); transform: translateY(-120%); opacity: 0; pointer-events: none; transition: transform 0.25s ease, opacity 0.25s ease; z-index: 90; }
+        body.nav-open header nav { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        header nav a, .theme-toggle { margin-left: 0; }
+        .theme-toggle { align-self: stretch; text-align: center; margin-top: 4px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-link"><img id="headerLogo" src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies Logo"></a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  <nav>
+    <a href="mission.html">Mission</a>
+    <a href="founder.html">Leadership</a>
+    <a href="services.html">Specialties</a>
+    <a href="facilities.html">For Facilities</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="contact.html" class="active">Request Coverage</a>
+    <button id="themeToggle" class="theme-toggle" type="button">Dark mode</button>
+  </nav>
+</header>
+
+<main>
+    <nav class="crumbs"><a href="index.html">Home</a><span>/</span><span>Contact</span></nav>
+    <div class="pill">Critical Insight Strategies</div>
+    <h1>Contact & Deployment Requests</h1>
+    <div class="subtitle">Streamlined intake for facilities and clinicians. This form is a starting point—we'll follow up to discuss your specific needs.</div>
+
+    <div class="layout">
+        <div class="copy-block">
+            <p><strong>For Healthcare Facilities:</strong> Tell us about your coverage needs. We'll match you with deployment-ready, high-acuity PAs who fit your environment.</p>
+            <ul>
+                <li>Short-term crisis coverage</li>
+                <li>ICU overflow and trauma surge</li>
+                <li>High-acuity gap coverage</li>
+                <li>Schedule stabilization</li>
+            </ul>
+            <p><strong>For Physician Assistants:</strong> Tell us about your experience and the environments where you excel. We'll match you with skill-appropriate, high-acuity assignments.</p>
+            <ul>
+                <li>Transparent expectations</li>
+                <li>Skill-matched deployment</li>
+                <li>Mentorship from doctorate-trained PA</li>
+                <li>Professional growth focus</li>
+            </ul>
+            <p style="font-size: 13px; opacity: 0.85; margin-top: 20px;">All inquiries are reviewed by our clinical director to ensure proper fit and readiness.</p>
+        </div>
+
+        <div class="form-card">
+            <h2>Submit a Request</h2>
+            <form id="contactForm">
+                <div class="field-group">
+                    <label class="field-label">I am a…</label>
+                    <select name="type" required>
+                        <option value="">Select one</option>
+                        <option value="Healthcare Facility">Healthcare Facility</option>
+                        <option value="Physician Assistant">Physician Assistant</option>
+                        <option value="Credentialing / HR">Credentialing / HR</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Name *</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Email *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Phone</label>
+                    <input type="tel" name="phone">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Organization (if applicable)</label>
+                    <input type="text" name="organization">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Message *</label>
+                    <textarea name="message" required placeholder="Tell us about your coverage needs or your experience and interests..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
+                <div class="status-box" id="statusBox"></div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <img id="footerLogo" class="footer-logo" src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies Logo">
+        <div>© 2025 Critical Insight Strategies — Clinician-Led Critical Care Deployment</div>
+    </div>
+</footer>
+
+<script>
+  (function () {
+    const body = document.body, toggle = document.getElementById('themeToggle'), navToggle = document.getElementById('navToggle');
+    function applyTheme(theme) { const isDark = theme === 'dark'; body.classList.toggle('dark-mode', isDark); if (toggle) toggle.textContent = isDark ? 'Light mode' : 'Dark mode'; }
+    applyTheme(localStorage.getItem('cis-theme') === 'dark' ? 'dark' : 'light');
+    if (toggle) toggle.addEventListener('click', function () { const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark'; applyTheme(newTheme); localStorage.setItem('cis-theme', newTheme); });
+    if (navToggle) navToggle.addEventListener('click', function () { body.classList.toggle('nav-open'); });
+    document.querySelectorAll('header nav a').forEach(link => { link.addEventListener('click', () => { body.classList.remove('nav-open'); }); });
+
+    // Form handling placeholder
+    const form = document.getElementById('contactForm');
+    const statusBox = document.getElementById('statusBox');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      statusBox.classList.add('visible');
+      statusBox.innerHTML = 'Submitting your request...';
+      
+      // Simulate submission (replace with actual endpoint)
+      setTimeout(function() {
+        statusBox.innerHTML = '<strong>Thank you!</strong> Your request has been received. We will be in touch shortly.';
+        submitBtn.textContent = 'Submitted';
+        form.reset();
+      }, 1500);
+    });
+  })();
+</script>
+</body>
+</html>

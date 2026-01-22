@@ -1,738 +1,1087 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Critical Insight Strategies | Clinician-Led Critical Care Deployment</title>
-  <meta name="description" content="Clinician-led travel PA staffing for high-acuity trauma, ICU, emergency, and hospital medicine environments." />
-  <style>
-    :root{
-      /* Critical Insight Strategies */
-      --cis-navy:#3B4A68;
-      --cis-steel:#828D9F;
+<meta charset="UTF-8">
+<title>Critical Insight Strategies | Elite Travel PA Staffing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon-32x32.png">
+<meta name="description" content="Critical Insight Strategies delivers clinician-led coverage built for the sickest patients and the most demanding environments—designed and directed by a doctorate-trained, board-certified critical care PA.">
+<meta name="keywords" content="travel PA staffing, critical care PA, trauma PA, ICU staffing, emergency medicine PA, hospital medicine, clinician-led staffing">
+<meta name="author" content="Critical Insight Strategies">
 
-      /* Grand Line Analytics */
-      --gla-teal:#0F4C4F;
-      --gla-gold:#D6B25E;
-      --gla-silver:#C7CCD6;
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://critical-insight-strategies.com/">
+<meta property="og:title" content="Critical Insight Strategies | Elite Travel PA Staffing">
+<meta property="og:description" content="Clinician-led critical care deployment for trauma, ICU, emergency & hospital medicine.">
+<meta property="og:image" content="https://critical-insight-strategies.com/assets/cis-logo-transparent.png">
 
-      /* UI */
-      --ink:#0b1220;
-      --bg0:#070A12;
-      --bg1:#0B1326;
-      --bg2:#0F1C38;
-      --card:rgba(255,255,255,0.06);
-      --card2:rgba(255,255,255,0.09);
-      --border:rgba(255,255,255,0.10);
-      --text:#EAF0FF;
-      --muted:rgba(234,240,255,0.70);
-      --muted2:rgba(234,240,255,0.55);
-      --shadow:0 28px 70px rgba(0,0,0,0.55);
-      --shadow2:0 22px 55px rgba(0,0,0,0.45);
-      --radius:18px;
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://critical-insight-strategies.com/">
+<meta property="twitter:title" content="Critical Insight Strategies | Elite Travel PA Staffing">
+<meta property="twitter:description" content="Clinician-led critical care deployment for trauma, ICU, emergency & hospital medicine.">
+<meta property="twitter:image" content="https://critical-insight-strategies.com/assets/cis-logo-transparent.png">
+
+<style>
+    /* ---------- THEME TOKENS ---------- */
+    :root {
+        --color-bg: #0a1a2e;
+        --color-bg-alt: #071422;
+        --color-header-bg: #071422;
+        --color-footer-bg: #050f1a;
+        --color-text: #C9D4E0;
+        --color-text-strong: #FFFFFF;
+        --color-accent: #3B82F6;
+        --color-accent-secondary: #60A5FA;
+        --color-card-border: rgba(59,130,246,0.25);
+        --color-contact-border: #3B82F6;
+        --color-hero-gradient-1: #0a1a2e;
+        --color-hero-gradient-2: #0f2847;
+        --color-button-text: #FFFFFF;
+        --color-cert-bg: rgba(59,130,246,0.15);
     }
 
-    *{box-sizing:border-box;}
-    html,body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(900px 520px at 14% 14%, rgba(59,74,104,0.55), transparent 55%),
-        radial-gradient(900px 520px at 86% 18%, rgba(130,141,159,0.30), transparent 58%),
-        radial-gradient(900px 520px at 72% 92%, rgba(59,74,104,0.35), transparent 60%),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg1) 40%, var(--bg2) 100%);
-      overflow-x:hidden;
-      position:relative;
+    body.dark-mode {
+        --color-bg: #030712;
+        --color-bg-alt: #020617;
+        --color-header-bg: #020617;
+        --color-footer-bg: #010409;
+        --color-text: #E5E7EB;
+        --color-text-strong: #F9FAFB;
+        --color-accent: #60A5FA;
+        --color-accent-secondary: #93C5FD;
+        --color-card-border: rgba(96,165,250,0.35);
+        --color-contact-border: #374151;
+        --color-hero-gradient-1: #030712;
+        --color-hero-gradient-2: #0f172a;
+        --color-button-text: #020617;
+        --color-cert-bg: rgba(96,165,250,0.12);
     }
 
-    /* Subtle global watermark logo */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image: url("assets/cis-logo-transparent.png");
-      background-repeat: no-repeat;
-      background-position: center 55%;
-      background-size: min(720px, 85vw);
-      opacity: 0.035;
-      filter: brightness(1.15);
-      pointer-events:none;
-      z-index:0;
+    /* ---------- BASE LAYOUT ---------- */
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--color-bg);
+        color: var(--color-text);
+        transition: background 0.35s ease, color 0.35s ease;
     }
 
-    /* iOS/mobile stability: avoid heavy fixed pseudo-element repaints */
-    @media (max-width: 980px){
-      body::before{
-        position:absolute;
-        background-size: 78vw;
-        background-position: center 40%;
-        opacity: 0.025;
+    a { color: inherit; }
+
+    /* ---------- ENHANCED LANDING SPLASH ---------- */
+    #landing {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(180deg, 
+            #020617 0%, 
+            #0a1628 20%,
+            #0d2847 40%,
+            #1e3a5f 60%,
+            #1e4976 80%,
+            #1e5a8a 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: #FFFFFF;
+        text-align: center;
+        font-family: inherit;
+        transition: opacity 0.8s ease;
+        overflow: hidden;
+    }
+
+    #landing.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    /* Medical pulse effect behind logo */
+    .pulse-bg {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+        animation: pulse 3s ease-in-out infinite;
+        z-index: 1;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    /* Heartbeat line animation */
+    .heartbeat-line {
+        position: absolute;
+        bottom: 20%;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        overflow: hidden;
+        opacity: 0.3;
+    }
+
+    .heartbeat-line svg {
+        width: 200%;
+        height: 100%;
+        animation: heartbeatSlide 4s linear infinite;
+    }
+
+    @keyframes heartbeatSlide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .landing-inner {
+        max-width: 520px;
+        padding: 2rem;
+        z-index: 10;
+        position: relative;
+    }
+
+    .logo-anim-wrap {
+        position: relative;
+        display: inline-block;
+    }
+
+    .logo-anim {
+        width: 220px;
+        max-width: 70vw;
+        filter: drop-shadow(0 0 20px rgba(59,130,246,0.5)) drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+        animation: logoFloat 3.5s ease-in-out infinite;
+        position: relative;
+        z-index: 10;
+    }
+
+    @keyframes logoFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    #landing h1 {
+        margin-top: 1.2rem;
+        margin-bottom: 0.6rem;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        text-shadow: 0 2px 15px rgba(0,0,0,0.5);
+    }
+
+    #landing p {
+        margin-bottom: 1.8rem;
+        font-size: 0.95rem;
+        opacity: 0.9;
+        text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+    }
+
+    #enter-site {
+        padding: 0.9rem 2.8rem;
+        border-radius: 999px;
+        border: 2px solid rgba(255,255,255,0.2);
+        background: linear-gradient(135deg, #3B82F6 0%, #2563eb 100%);
+        color: #FFFFFF;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(59,130,246,0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #enter-site:hover {
+        background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 100%);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.5), 0 0 30px rgba(59,130,246,0.5);
+    }
+
+    /* Hide main content until splash dismissed */
+    #site-content.hidden {
+        display: none;
+    }
+
+    /* Deploy animation */
+    #landing.deploying .logo-anim {
+        animation: logoDepart 1s ease-in forwards;
+    }
+
+    @keyframes logoDepart {
+        0% { transform: translateX(0) translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateX(50vw) translateY(-20px) scale(0.8); opacity: 0; }
+    }
+
+    /* ---------- HEADER & NAV ---------- */
+    header {
+        background: var(--color-header-bg);
+        padding: 14px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        z-index: 100;
+        transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    header a.logo-link {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    header img {
+        height: 60px;
+        transition: filter 0.35s ease, transform 0.25s ease;
+    }
+
+    header img:hover {
+        transform: translateY(-1px);
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-text);
+        margin-left: 28px;
+        text-decoration: none;
+        font-size: 13px;
+        transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+        opacity: 0.9;
+    }
+
+    nav a.active {
+        color: var(--color-accent);
+        opacity: 1;
+        font-weight: 700;
+    }
+
+    nav a:hover {
+        color: var(--color-accent);
+        transform: translateY(-1px);
+        opacity: 1;
+    }
+
+    .theme-toggle {
+        margin-left: 28px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-accent);
+        background: transparent;
+        color: var(--color-accent);
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+        background: var(--color-accent);
+        color: var(--color-button-text);
+        transform: translateY(-1px);
+        box-shadow: 0 0 12px rgba(59,130,246,0.5);
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        padding: 8px;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        margin: 4px 0;
+        background: var(--color-text-strong);
+        border-radius: 999px;
+        transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
+
+    body.nav-open .nav-toggle span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+    body.nav-open .nav-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+    body.nav-open .nav-toggle span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 90px 60px 80px 60px;
+        background: linear-gradient(135deg, var(--color-hero-gradient-1), var(--color-hero-gradient-2));
+        transition: background 0.35s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(59,130,246,0.18), transparent 55%);
+        pointer-events: none;
+        opacity: 0.8;
+        transition: opacity 0.35s ease;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 580px;
+    }
+
+    h1, h2, h3 {
+        color: #FFFFFF;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+        transition: transform 0.25s ease, text-shadow 0.25s ease;
+        text-shadow: 0 0 4px rgba(0,0,0,0.7);
+    }
+
+    .hero h1:hover {
+        transform: translateY(-2px);
+        text-shadow: 0 0 18px rgba(59,130,246,0.6);
+    }
+
+    .hero p {
+        font-size: 18px;
+        max-width: 520px;
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .hero-logo {
+        position: relative;
+        z-index: 1;
+        height: 280px;
+        filter: drop-shadow(0 0 12px rgba(59,130,246,0.5));
+        transition: filter 0.35s ease, transform 0.3s ease;
+    }
+
+    .hero-logo:hover {
+        transform: translateY(-4px);
+        filter: drop-shadow(0 0 20px rgba(59,130,246,0.7));
+    }
+
+    .divider {
+        height: 2px;
+        width: 120px;
+        background: var(--color-accent);
+        margin: 30px 0;
+        transition: background 0.35s ease, transform 0.25s ease;
+    }
+
+    .divider:hover {
+        transform: translateX(4px);
+    }
+
+    .hero-btns {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+
+    .service-btn {
+        display: inline-block;
+        background: var(--color-accent);
+        color: var(--color-button-text);
+        padding: 12px 24px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        border: 1px solid transparent;
+        transition: background 0.2s ease, color 0.2s ease,
+                    transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-btn:hover {
+        background: #60A5FA;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+        border-color: rgba(0,0,0,0.2);
+    }
+
+    .service-btn.ghost {
+        background: transparent;
+        border: 2px solid var(--color-accent);
+        color: var(--color-accent);
+    }
+
+    .service-btn.ghost:hover {
+        background: var(--color-accent);
+        color: var(--color-button-text);
+    }
+
+    /* ---------- CREDENTIALS STRIP ---------- */
+    .cred-strip {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding: 24px 40px;
+        background: var(--color-bg-alt);
+        border-top: 1px solid rgba(59,130,246,0.2);
+        border-bottom: 1px solid rgba(59,130,246,0.2);
+    }
+
+    .cred-item {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 600;
+        color: var(--color-accent);
+        opacity: 0.9;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about {
+        padding: 50px 60px;
+        background: linear-gradient(180deg, rgba(7,20,34,0.5), transparent);
+        transition: background 0.35s ease;
+    }
+
+    body.dark-mode .about {
+        background: linear-gradient(180deg, rgba(15,23,42,0.8), transparent);
+    }
+
+    .about p {
+        max-width: 900px;
+        line-height: 1.6;
+        font-size: 15px;
+    }
+
+    /* ---------- COMPACT SERVICES STRIP ---------- */
+    .services-strip {
+        padding: 50px 60px;
+        border-top: 1px solid rgba(148,163,184,0.3);
+        border-bottom: 1px solid rgba(148,163,184,0.3);
+        background: rgba(7, 20, 34, 0.6);
+    }
+
+    body.dark-mode .services-strip {
+        background: rgba(15,23,42,0.7);
+    }
+
+    .services-strip-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 24px;
+    }
+
+    .services-strip-header h2 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .services-strip-subtitle {
+        font-size: 13px;
+        max-width: 520px;
+    }
+
+    .services-strip-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .services-pill {
+        border-radius: 16px;
+        border: 1px solid rgba(148,163,184,0.5);
+        padding: 16px 18px;
+        background: rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .services-pill:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        border-color: var(--color-accent);
+    }
+
+    .services-pill h3 {
+        font-size: 12px;
+        margin-bottom: 6px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+    }
+
+    .services-pill p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .services-strip-cta {
+        margin-left: auto;
+        white-space: nowrap;
+    }
+
+    .services-strip-cta a {
+        display: inline-block;
+        background: transparent;
+        border-radius: 999px;
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
+        padding: 8px 18px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .services-strip-cta a:hover {
+        background: var(--color-accent);
+        color: var(--color-button-text);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+    }
+
+    /* ---------- VALUE PROPS ---------- */
+    .value-props {
+        padding: 50px 60px;
+        background: var(--color-bg);
+    }
+
+    .value-props h2 {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+
+    .value-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .value-card {
+        background: var(--color-bg-alt);
+        border-radius: 16px;
+        border: 1px solid var(--color-card-border);
+        padding: 20px;
+        box-shadow: 0 10px 26px rgba(0,0,0,0.4);
+    }
+
+    .value-card h3 {
+        font-size: 13px;
+        margin-bottom: 8px;
+        color: var(--color-accent);
+    }
+
+    .value-card p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* ---------- CERTIFICATIONS ---------- */
+    .certs-section {
+        padding: 50px 60px;
+        background: var(--color-bg-alt);
+        border-top: 1px solid rgba(59,130,246,0.2);
+    }
+
+    .certs-section h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .certs-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .cert-tag {
+        background: var(--color-cert-bg);
+        border: 1px solid rgba(59,130,246,0.3);
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-accent);
+    }
+
+    .certs-note {
+        font-size: 13px;
+        opacity: 0.85;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+        padding: 60px;
+        text-align: center;
+        background: var(--color-bg-alt);
+        border-top: 1px solid var(--color-contact-border);
+        transition: background 0.35s ease, border-color 0.35s ease;
+    }
+
+    .contact h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .contact p {
+        font-size: 15px;
+    }
+
+    .cta-btn {
+        margin-top: 20px;
+        background: var(--color-accent);
+        border: none;
+        padding: 14px 32px;
+        font-size: 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        color: var(--color-button-text);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        transition: background 0.2s ease, color 0.2s ease,
+                    transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-btn:hover {
+        background: #60A5FA;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+        text-align: center;
+        padding: 18px 20px 24px 20px;
+        background: var(--color-footer-bg);
+        border-top: 1px solid var(--color-contact-border);
+        font-size: 11px;
+        color: var(--color-text);
+        transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .footer-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-powered {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10px;
+        opacity: 0.7;
+        margin-top: 8px;
+    }
+
+    .footer-powered img {
+        height: 24px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1100px) {
+        .services-strip-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .value-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 880px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 60px 20px 50px 20px;
+        }
+        .hero-content {
+            margin-bottom: 30px;
+        }
+        .hero-btns {
+            justify-content: center;
+        }
+
+        header {
+            padding: 12px 16px;
+        }
+
+        .nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header nav {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--color-header-bg);
+            padding: 10px 18px 16px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+            z-index: 90;
+        }
+
+        body.nav-open header nav {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        header nav a,
+        .theme-toggle {
+            margin-left: 0;
+        }
+
+        header nav a {
+            font-size: 13px;
+            letter-spacing: 0.12em;
+        }
+
+        .theme-toggle {
+            align-self: stretch;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .about,
+        .services-strip,
+        .value-props,
+        .certs-section,
+        .contact {
+            padding: 50px 20px;
+        }
+
+        .services-strip-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .services-strip-cta {
+            margin-left: 0;
+        }
+        .services-strip-grid {
+            grid-template-columns: 1fr;
+        }
+        .value-grid {
+            grid-template-columns: 1fr;
+        }
+        .cred-strip {
+            gap: 20px;
+        }
+        .hero h1 {
+            font-size: 32px;
+        }
+
+        .hero-logo {
+            height: 200px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div id="landing">
+    <!-- Pulse background -->
+    <div class="pulse-bg"></div>
+    
+    <!-- Heartbeat line -->
+    <div class="heartbeat-line">
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,30 L200,30 L220,30 L240,10 L260,50 L280,20 L300,40 L320,30 L400,30 L600,30 L620,30 L640,10 L660,50 L680,20 L700,40 L720,30 L800,30 L1000,30 L1020,30 L1040,10 L1060,50 L1080,20 L1100,40 L1120,30 L1200,30" 
+                  fill="none" 
+                  stroke="rgba(59,130,246,0.6)" 
+                  stroke-width="2"/>
+        </svg>
+        <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,30 L200,30 L220,30 L240,10 L260,50 L280,20 L300,40 L320,30 L400,30 L600,30 L620,30 L640,10 L660,50 L680,20 L700,40 L720,30 L800,30 L1000,30 L1020,30 L1040,10 L1060,50 L1080,20 L1100,40 L1120,30 L1200,30" 
+                  fill="none" 
+                  stroke="rgba(59,130,246,0.6)" 
+                  stroke-width="2"/>
+        </svg>
+    </div>
+    
+    <!-- Main content -->
+    <div class="landing-inner">
+        <div class="logo-anim-wrap">
+            <img src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies logo" class="logo-anim">
+        </div>
+        <h1>Critical Insight Strategies</h1>
+        <p>Clinician-led critical care deployment for trauma, ICU, emergency & hospital medicine.</p>
+        <button id="enter-site" type="button">Enter</button>
+    </div>
+</div>
+
+<main id="site-content" class="hidden">
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img id="headerLogo" src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies Logo">
+  </a>
+
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
+    <a href="mission.html">Mission</a>
+    <a href="founder.html">Leadership</a>
+    <a href="services.html">Specialties</a>
+    <a href="facilities.html">For Facilities</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="contact.html">Request Coverage</a>
+    <button id="themeToggle" class="theme-toggle" type="button">Dark mode</button>
+  </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Elite Travel PA Staffing</h1>
+        <p>Critical Insight Strategies delivers clinician-led coverage built for the sickest patients and the most demanding environments—designed and directed by a doctorate-trained, board-certified critical care PA.</p>
+        <div class="divider"></div>
+        <div class="hero-btns">
+            <a class="service-btn" href="contact.html">Request Elite PA Coverage</a>
+            <a class="service-btn ghost" href="pas.html">Join the High-Acuity Team</a>
+        </div>
+    </div>
+    <img id="heroLogo" class="hero-logo" src="assets/cis-logo-transparent.png" alt="Company logo">
+</section>
+
+<div class="cred-strip">
+    <span class="cred-item">Residency-Trained Leadership</span>
+    <span class="cred-item">Dual CAQs: EM + HM</span>
+    <span class="cred-item">Procedural Excellence</span>
+    <span class="cred-item">Disaster / Austere Readiness</span>
+</div>
+
+<section id="about" class="about">
+    <h2>Founded & Led by a Board-Certified Critical Care PA</h2>
+    <p>
+        This is not recruiter-driven staffing. It is clinician-designed deployment—built for high-acuity environments where expertise, procedural capability, and readiness matter. Critical Insight Strategies is founded and clinically directed by <strong>Dr. Mary Herc, DMSc, PA-C, CAQ-EM, CAQ-HM</strong>. Our model prioritizes patient safety, operational readiness, and accountable PA autonomy.
+    </p>
+    <p>
+        We staff only environments where clinical decision-making and procedural competence are essential: trauma, critical care, emergency medicine, and hospital medicine.
+    </p>
+</section>
+
+<section class="services-strip" id="services">
+    <div class="services-strip-header">
+        <div>
+            <h2>Specialties We Staff — High-Acuity Only</h2>
+            <div class="services-strip-subtitle">
+                Narrow scope increases quality. These services are designed for hospitals that need dependable, high-performing clinicians immediately.
+            </div>
+        </div>
+        <div class="services-strip-cta">
+            <a href="services.html">View all specialties</a>
+        </div>
+    </div>
+
+    <div class="services-strip-grid">
+        <div class="services-pill">
+            <h3>Trauma & Surgical ICU</h3>
+            <p>High-risk surgical patients, resuscitation support, procedural coverage.</p>
+        </div>
+        <div class="services-pill">
+            <h3>Medical ICU</h3>
+            <p>Complex critical illness, vent management support, bedside ultrasound.</p>
+        </div>
+        <div class="services-pill">
+            <h3>Emergency Medicine</h3>
+            <p>High-volume acuity, rapid decision-making, trauma response.</p>
+        </div>
+        <div class="services-pill">
+            <h3>Hospital Medicine</h3>
+            <p>Inpatient flow, consult coordination, escalation and stabilization.</p>
+        </div>
+    </div>
+</section>
+
+<section class="value-props">
+    <h2>Why This Model Works</h2>
+    <div class="value-grid">
+        <div class="value-card">
+            <h3>Lower Supervision Burden</h3>
+            <p>Credentialed, high-acuity PAs who integrate quickly into your existing workflows.</p>
+        </div>
+        <div class="value-card">
+            <h3>Faster Ramp-Up</h3>
+            <p>Clinician-led onboarding and readiness validation for immediate deployment.</p>
+        </div>
+        <div class="value-card">
+            <h3>Reduced Adverse Event Risk</h3>
+            <p>Academic-level practice standards applied consistently in critical settings.</p>
+        </div>
+        <div class="value-card">
+            <h3>Transparent Expectations</h3>
+            <p>Skill-matched deployment—no entry-level placements in high-acuity environments.</p>
+        </div>
+    </div>
+</section>
+
+<section class="certs-section">
+    <h2>Certifications & Compliance — Always Deployment-Ready</h2>
+    <div class="certs-grid">
+        <span class="cert-tag">ACLS</span>
+        <span class="cert-tag">ATLS</span>
+        <span class="cert-tag">AWLS</span>
+        <span class="cert-tag">BLS</span>
+        <span class="cert-tag">ENLS</span>
+        <span class="cert-tag">PALS</span>
+        <span class="cert-tag">TCCC</span>
+        <span class="cert-tag">NCCPA PA-C</span>
+        <span class="cert-tag">CAQ-EM</span>
+        <span class="cert-tag">CAQ-HM</span>
+    </div>
+    <p class="certs-note">Designed to reduce credentialing friction and accelerate privileging across trauma and critical care environments. Rapid credentialing workflows, hospital-specific privileging familiarity, and trauma-center compliance standards.</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Request Coverage or Join the Team</h2>
+    <p>Direct messaging for CMOs, Directors, staffing offices, and experienced PAs seeking high-acuity assignments.</p>
+    <button class="cta-btn" onclick="location.href='contact.html'">Get Started</button>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Critical Insight Strategies — Clinician-Led Critical Care Deployment</div>
+        <div class="footer-powered">
+            Powered by <strong>Grand Line Analytics</strong>
+        </div>
+    </div>
+</footer>
+
+</main>
+
+<script>
+  (function () {
+    const body = document.body;
+    const toggle = document.getElementById('themeToggle');
+    const navToggle = document.getElementById('navToggle');
+
+    function applyTheme(theme) {
+      const isDark = theme === 'dark';
+      body.classList.toggle('dark-mode', isDark);
+
+      if (toggle) {
+        toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
       }
     }
 
-    body > *{position:relative; z-index:1;}
+    const saved = localStorage.getItem('cis-theme');
+    applyTheme(saved === 'dark' ? 'dark' : 'light');
 
-    a{color:inherit;}
-
-    .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
-
-    /* Top nav */
-    /* Mobile menu */
-    .menu-btn{
-      display:none;
-      align-items:center;
-      justify-content:center;
-      width:44px;
-      height:44px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color:var(--text);
-      cursor:pointer;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-    }
-    .menu-btn:hover{transform: translateY(-1px); background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.22);}
-
-    .mobile-drawer{
-      position:fixed;
-      inset:0;
-      background: rgba(0,0,0,0.55);
-      display:none;
-      z-index:80;
-    }
-    .mobile-drawer.open{display:block;}
-    .mobile-panel{
-      position:absolute;
-      right:0;
-      top:0;
-      height:100%;
-      width: min(420px, 92vw);
-      padding:18px;
-      background: linear-gradient(135deg, rgba(7,10,18,0.92), rgba(11,19,38,0.86));
-      backdrop-filter: blur(16px);
-      border-left:1px solid rgba(255,255,255,0.10);
-      overflow:auto;
-    }
-    .mobile-panel .panel-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-    .close-btn{
-      width:44px;
-      height:44px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color:var(--text);
-      cursor:pointer;
-    }
-    .mobile-panel a{
-      display:block;
-      text-decoration:none;
-      font-size:14px;
-      color: rgba(234,240,255,0.86);
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-      margin-bottom:10px;
-    }
-    .mobile-panel a:hover{background: rgba(255,255,255,0.07)}
-    .mobile-panel .cta{
-      border-color: rgba(130,141,159,0.35);
-      background: linear-gradient(135deg, rgba(59,74,104,0.92), rgba(59,74,104,0.62));
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('cis-theme', newTheme);
+      });
     }
 
-    @media (max-width: 980px){
-      .menu-btn{display:inline-flex;}
+    if (navToggle) {
+      navToggle.addEventListener('click', function () {
+        body.classList.toggle('nav-open');
+      });
     }
 
-    .nav{
-      position:sticky; top:0; z-index:50;
-      background: linear-gradient(135deg, rgba(7,10,18,0.78), rgba(11,19,38,0.62));
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255,255,255,0.10);
-    }
-    .nav .inner{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:18px 0;}
-    .brand{display:flex; align-items:center; gap:18px; min-width:320px;}
-    .brand img{height:64px; width:auto; display:block; filter: drop-shadow(0 14px 28px rgba(0,0,0,0.45)) brightness(1.15);}
-    @media (max-width: 560px){
-      .brand{min-width: unset; gap:12px;}
-      .brand img{height:46px;}
-      .brand .name span{display:none;}
-    }
-    .brand .name{line-height:1.1;}
-    .brand .name strong{display:block; font-size:14px; letter-spacing:0.22em; text-transform:uppercase; opacity:0.95;}
-    .brand .name span{display:block; font-size:13px; color:var(--muted2); margin-top:6px;}
-
-    .navlinks{display:flex; align-items:center; gap:18px; flex-wrap:wrap; justify-content:flex-end;}
-    .navlinks a{
-      text-decoration:none;
-      font-size:13px;
-      color:var(--muted);
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid transparent;
-      transition: all .18s ease;
-      white-space:nowrap;
-    }
-    .navlinks a:hover{color:var(--text); border-color:rgba(255,255,255,0.14); background:rgba(255,255,255,0.05);}
-
-    .nav-cta{display:flex; align-items:center; gap:10px;}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      text-decoration:none;
-      font-weight:650;
-      font-size:13px;
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.06);
-      color:var(--text);
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.22);}
-
-    .btn.primary{
-      border: 1px solid rgba(130,141,159,0.35);
-      background: linear-gradient(135deg, rgba(59,74,104,0.92), rgba(59,74,104,0.62));
-      box-shadow: 0 18px 48px rgba(59,74,104,0.35);
-    }
-
-    /* Hero */
-    .hero{padding:78px 0 34px;}
-
-    /* Center hero logo */
-    .hero-lockup{display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:18px;}
-    .hero-lockup img{height:140px; width:auto; display:block; filter: drop-shadow(0 22px 42px rgba(0,0,0,0.55)); opacity:0.98;}
-    @media (max-width: 560px){
-      .hero-lockup img{height:112px;}
-    }
-    .hero-grid{display:grid; grid-template-columns: 1.2fr 0.8fr; gap:28px; align-items:stretch;}
-
-    .hero-card{
-      border:1px solid rgba(255,255,255,0.12);
-      background:
-        radial-gradient(900px 520px at 18% 12%, rgba(130,141,159,0.22), transparent 58%),
-        radial-gradient(700px 520px at 78% 88%, rgba(59,74,104,0.28), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.04) 100%);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 34px;
-      position:relative;
-      overflow:hidden;
-    }
-    .kicker{display:inline-flex; gap:10px; align-items:center; padding:8px 12px; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10); color:var(--muted); font-size:12px;}
-    .dot{width:7px; height:7px; border-radius:999px; background: linear-gradient(135deg, var(--cis-steel), rgba(255,255,255,0.9)); box-shadow:0 0 0 4px rgba(130,141,159,0.12);}
-
-    h1{margin:16px 0 10px; font-size:46px; line-height:1.06; letter-spacing:-0.02em;}
-    .sub{margin:0 0 18px; font-size:16px; color:var(--muted); max-width:58ch;}
-
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
-
-    .stat-panel{
-      border:1px solid rgba(255,255,255,0.12);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      padding: 26px;
-      overflow:hidden;
-      position:relative;
-    }
-    .stat-panel:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(420px 260px at 18% 18%, rgba(59,74,104,0.45), transparent 60%),
-        radial-gradient(420px 260px at 86% 70%, rgba(130,141,159,0.26), transparent 60%);
-      opacity:0.9;
-      pointer-events:none;
-    }
-    .stat-panel > *{position:relative;}
-    .stat-title{font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(234,240,255,0.72);}
-    .stat-list{margin:16px 0 0; padding:0; list-style:none; display:grid; gap:12px;}
-    .pill{
-      display:flex; align-items:flex-start; gap:10px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.12);
-    }
-    .pill b{display:block; font-size:13px;}
-    .pill span{display:block; font-size:12px; color:var(--muted2); margin-top:2px;}
-    .pill .mark{width:10px; height:10px; border-radius:3px; background: linear-gradient(135deg, var(--cis-steel), rgba(255,255,255,0.85)); margin-top:3px;}
-
-    /* Sections */
-    .section{padding:54px 0;}
-    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:18px;}
-    .section-head h2{margin:0; font-size:26px; letter-spacing:-0.01em;}
-    .section-head p{margin:0; color:var(--muted); max-width:68ch; font-size:14px;}
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:16px;
-    }
-
-    .card{
-      border:1px solid rgba(255,255,255,0.12);
-      background: linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.035));
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 18px 60px rgba(0,0,0,0.35);
-    }
-
-    .card h3{margin:2px 0 6px; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(234,240,255,0.82);}
-    .card p{margin:0; color:var(--muted); font-size:13px; line-height:1.55;}
-
-    .two-col{grid-column: span 6;}
-    .three-col{grid-column: span 4;}
-    .four-col{grid-column: span 3;}
-    .full{grid-column: 1 / -1;}
-
-    .spec{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:16px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,0.12);
-      background: rgba(0,0,0,0.10);
-    }
-    .spec strong{font-size:14px;}
-    .spec em{font-style:normal; color:var(--muted2); font-size:12px;}
-
-    .tagrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-      color: rgba(234,240,255,0.80);
-      font-size:12px;
-    }
-
-    /* Contact */
-    .contact{
-      border:1px solid rgba(255,255,255,0.12);
-      background:
-        radial-gradient(900px 520px at 10% 20%, rgba(59,74,104,0.34), transparent 60%),
-        radial-gradient(700px 520px at 90% 70%, rgba(130,141,159,0.22), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-    form{display:grid; grid-template-columns: repeat(12, 1fr); gap:12px; margin-top:14px;}
-    label{font-size:12px; color:rgba(234,240,255,0.70); display:block; margin-bottom:6px; letter-spacing:0.04em;}
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.18);
-      color: var(--text);
-      outline:none;
-    }
-    textarea{min-height:120px; resize:vertical;}
-    .field{grid-column: span 6;}
-    .field.full{grid-column: 1 / -1;}
-
-    .form-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;}
-
-    /* Footer */
-    footer{
-      margin-top:56px;
-      border-top:1px solid rgba(255,255,255,0.10);
-      background:
-        radial-gradient(520px 240px at 18% 0%, rgba(15,76,79,0.55), transparent 65%),
-        radial-gradient(520px 240px at 86% 20%, rgba(214,178,94,0.18), transparent 60%),
-        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.35));
-      padding: 34px 0;
-    }
-    .foot{
-      display:flex; align-items:center; justify-content:space-between; gap:18px;
-      flex-wrap:wrap;
-      color: rgba(234,240,255,0.65);
-      font-size:12px;
-    }
-    .powered{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
-    .powered .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(214,178,94,0.24);
-      background: rgba(15,76,79,0.18);
-    }
-    .powered img{height:26px; width:auto; display:block; filter: drop-shadow(0 10px 18px rgba(0,0,0,0.45));}
-    .powered b{color: rgba(234,240,255,0.90); letter-spacing:0.14em; text-transform:uppercase; font-size:11px;}
-    .powered span{color: rgba(234,240,255,0.70);}
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .hero-grid{grid-template-columns: 1fr;}
-      h1{font-size:38px;}
-      .navlinks{display:none;}
-      .field{grid-column: span 12;}
-      .two-col{grid-column: span 12;}
-      .three-col{grid-column: span 6;}
-      .four-col{grid-column: span 6;}
-    }
-
-    @media (max-width: 560px){
-      .wrap{padding:0 18px;}
-      header, .nav .inner{padding-left:0; padding-right:0;}
-      h1{font-size:32px;}
-      .brand .name strong{font-size:12px;}
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="drawer" aria-hidden="true">
-    <div class="mobile-panel" role="dialog" aria-modal="true" aria-label="Navigation">
-      <div class="panel-top">
-        <div class="kicker" style="margin:0"><span class="dot"></span> Navigation</div>
-        <button class="close-btn" id="closeDrawer" aria-label="Close menu">✕</button>
-      </div>
-      <a href="#about" class="drawerLink">About</a>
-      <a href="#leadership" class="drawerLink">Clinical Leadership</a>
-      <a href="#specialties" class="drawerLink">Specialties</a>
-      <a href="#capabilities" class="drawerLink">Capabilities</a>
-      <a href="#facilities" class="drawerLink">Facilities</a>
-      <a href="#pas" class="drawerLink">For PAs</a>
-      <a href="#contact" class="drawerLink">Contact</a>
-      <div style="height:10px"></div>
-      <a href="#contact" class="drawerLink cta">Request Coverage</a>
-      <a href="#pas" class="drawerLink">Join Team</a>
-    </div>
-  </div>
-
-
-  <!-- NAV -->
-  <div class="nav">
-    <div class="wrap inner">
-      <div class="brand">
-        <!-- Replace with your final CIS logo asset path -->
-        <img src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies" />
-        <div class="name">
-          <strong>Critical Insight Strategies</strong>
-          <span>Clinician-led critical care deployment</span>
-        </div>
-      </div>
-
-      <div class="navlinks" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#leadership">Clinical Leadership</a>
-        <a href="#specialties">Specialties</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#pas">For PAs</a>
-        <a href="#contact">Contact</a>
-      </div>
-
-      <div class="nav-cta">
-        <a class="btn" href="#pas">Join Team</a>
-        <a class="btn primary" href="#contact">Request Coverage</a>
-        <button class="menu-btn" id="openDrawer" aria-label="Open menu" title="Menu">☰</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <main class="wrap">
-    <section class="hero" id="top">
-      <div class="hero-grid">
-        <div class="hero-card">
-          <div class="hero-lockup" aria-label="Critical Insight Strategies logo">
-            <img src="assets/cis-logo-transparent.png" alt="Critical Insight Strategies" />
-          </div>
-          <div class="kicker"><span class="dot"></span> High-acuity only • Clinician-designed deployment</div>
-          <h1>Elite Travel PA Staffing for Trauma, ICU, Emergency & Hospital Medicine</h1>
-          <p class="sub">Critical Insight Strategies delivers clinician-led coverage built for the sickest patients and the most demanding environments—designed and directed by a doctorate-trained, board-certified critical care PA.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">For Facilities: Request Elite PA Coverage</a>
-            <a class="btn" href="#pas">For PAs: Join the High-Acuity Team</a>
-          </div>
-          <div class="tagrow" style="margin-top:18px;">
-            <div class="tag">Residency-trained leadership</div>
-            <div class="tag">Dual CAQs: EM + HM</div>
-            <div class="tag">Procedural excellence</div>
-            <div class="tag">Disaster / austere readiness</div>
-          </div>
-        </div>
-
-        <aside class="stat-panel" aria-label="Key differentiators">
-          <div class="stat-title">Why this model works</div>
-          <ul class="stat-list">
-            <li class="pill"><span class="mark"></span><div><b>Lower supervision burden</b><span>Credentialed, high-acuity PAs who integrate quickly.</span></div></li>
-            <li class="pill"><span class="mark"></span><div><b>Faster ramp-up</b><span>Clinician-led onboarding and readiness validation.</span></div></li>
-            <li class="pill"><span class="mark"></span><div><b>Reduced adverse event risk</b><span>Academic-level practice standards in critical settings.</span></div></li>
-            <li class="pill"><span class="mark"></span><div><b>Transparent expectations</b><span>Skill-matched deployment—no entry-level placements.</span></div></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="section-head">
-        <h2>Founded & Led by a Board-Certified Critical Care PA</h2>
-        <p>This is not recruiter-driven staffing. It is clinician-designed deployment—built for high-acuity environments where expertise, procedural capability, and readiness matter.</p>
-      </div>
-      <div class="grid">
-        <div class="card three-col leadership-photo">
-          <img src="assets/dr-mary-herc.png" alt="Dr. Mary Herc, DMSc, PA-C" />
-        </div>
-        <div class="card two-col">
-          <h3>Clinician-led staffing</h3>
-          <p>Critical Insight Strategies is founded and clinically directed by <b>Dr. Mary Herc, DMSc, PA-C, CAQ-EM, CAQ-HM</b>. Our model prioritizes patient safety, operational readiness, and accountable PA autonomy.</p>
-        </div>
-        <div class="card two-col">
-          <h3>High-acuity focus</h3>
-          <p>We staff only environments where clinical decision-making and procedural competence are essential: trauma, critical care, emergency medicine, and hospital medicine.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLINICAL LEADERSHIP -->
-    <section class="section" id="leadership">
-      <style>
-        .leadership-photo{display:flex;align-items:center;justify-content:center}
-        .leadership-photo img{width:100%;max-width:320px;border-radius:20px;border:1px solid rgba(255,255,255,0.14);box-shadow:0 22px 60px rgba(0,0,0,0.45)}
-      </style>
-      <div class="section-head">
-        <h2>Clinical Leadership — Dr. Mary Herc</h2>
-        <p>Credentials that translate directly into institutional trust: academic training, frontline practice, and procedural authority in high-risk settings.</p>
-      </div>
-      <div class="grid">
-        <div class="card three-col">
-          <h3>Training</h3>
-          <p>Seton Hall University → Johns Hopkins Critical Care PA Residency → Doctorate in Medical Science (DMSc).</p>
-        </div>
-        <div class="card three-col">
-          <h3>Board certifications</h3>
-          <p>NCCPA PA‑C plus dual CAQs: Emergency Medicine (CAQ‑EM) and Hospital Medicine (CAQ‑HM).</p>
-        </div>
-        <div class="card three-col">
-          <h3>Practice</h3>
-          <p>Active frontline practice at an academic Level I trauma center with surgical critical care experience.</p>
-        </div>
-        <div class="card three-col">
-          <h3>Recognition</h3>
-          <p>Advanced Practice Clinical Excellence Award nominee and service leadership / advocacy background.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SPECIALTIES -->
-    <section class="section" id="specialties">
-      <div class="section-head">
-        <h2>Specialties We Staff — High-Acuity Only</h2>
-        <p>Narrow scope increases quality. These services are designed for hospitals that need dependable, high-performing clinicians immediately.</p>
-      </div>
-      <div class="grid">
-        <div class="card four-col"><h3>Trauma & Surgical ICU</h3><p>High-risk surgical patients, resuscitation support, procedural coverage.</p></div>
-        <div class="card four-col"><h3>Medical ICU</h3><p>Complex critical illness, vent management support, bedside ultrasound.</p></div>
-        <div class="card four-col"><h3>Emergency Medicine</h3><p>High-volume acuity, rapid decision-making, trauma response.</p></div>
-        <div class="card four-col"><h3>Hospital Medicine</h3><p>Inpatient flow, consult coordination, escalation and stabilization.</p></div>
-        <div class="card four-col"><h3>Neurocritical Care</h3><p>Monitoring support, rapid deterioration response, ICU workflows.</p></div>
-        <div class="card four-col"><h3>Acute Care Surgery</h3><p>Peri-op support, critical care continuity, procedure readiness.</p></div>
-        <div class="card four-col"><h3>Tele‑ICU (when applicable)</h3><p>Remote monitoring support and escalation pathways.</p></div>
-      </div>
-    </section>
-
-    <!-- CAPABILITIES -->
-    <section class="section" id="capabilities">
-      <div class="section-head">
-        <h2>Procedural & Operational Capabilities</h2>
-        <p>Beyond staffing. This signals safe coverage for your sickest patients, reduced credentialing friction, and predictable performance.</p>
-      </div>
-      <div class="grid">
-        <div class="card two-col">
-          <h3>Procedures</h3>
-          <div class="spec"><div><strong>Central & arterial line placement</strong><br><em>Evidence-based technique with ICU pace.</em></div></div>
-          <div style="height:10px"></div>
-          <div class="spec"><div><strong>Bronchoscopy</strong><br><em>Critical airway support and assessment.</em></div></div>
-          <div style="height:10px"></div>
-          <div class="spec"><div><strong>Advanced tube placement</strong><br><em>NG/ND placement and escalation protocols.</em></div></div>
-          <div style="height:10px"></div>
-          <div class="spec"><div><strong>Bedside ultrasonography</strong><br><em>Rapid diagnostics and procedural guidance.</em></div></div>
-        </div>
-        <div class="card two-col">
-          <h3>Operational readiness</h3>
-          <div class="spec"><div><strong>Trauma resuscitation leadership</strong><br><em>Team-based workflow under pressure.</em></div></div>
-          <div style="height:10px"></div>
-          <div class="spec"><div><strong>Critical airway support</strong><br><em>Escalation-ready in high acuity settings.</em></div></div>
-          <div style="height:10px"></div>
-          <div class="spec"><div><strong>Tactical & austere medicine</strong><br><em>Disaster-ready capability when standard systems strain.</em></div></div>
-          <div style="height:10px"></div>
-          <div class="spec"><div><strong>Clinician-led validation</strong><br><em>Skill matching and readiness confirmation.</em></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS / COMPLIANCE -->
-    <section class="section" id="compliance">
-      <div class="section-head">
-        <h2>Certifications & Compliance — Always Deployment-Ready</h2>
-        <p>Designed to reduce credentialing friction and accelerate privileging across trauma and critical care environments.</p>
-      </div>
-      <div class="grid">
-        <div class="card full">
-          <h3>Active certifications</h3>
-          <div class="tagrow">
-            <div class="tag">ACLS</div>
-            <div class="tag">ATLS</div>
-            <div class="tag">AWLS</div>
-            <div class="tag">BLS</div>
-            <div class="tag">ENLS</div>
-            <div class="tag">PALS</div>
-            <div class="tag">TCCC</div>
-            <div class="tag">NCCPA PA‑C</div>
-            <div class="tag">CAQ‑EM</div>
-            <div class="tag">CAQ‑HM</div>
-          </div>
-          <div style="height:14px"></div>
-          <p>Additional emphasis: rapid credentialing workflows, hospital-specific privileging familiarity, and trauma-center compliance standards.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FACILITIES -->
-    <section class="section" id="facilities">
-      <div class="section-head">
-        <h2>For Healthcare Facilities</h2>
-        <p>Direct messaging for CMOs, Directors, and staffing offices: high-acuity gap coverage with clinician-led onboarding and predictable performance.</p>
-      </div>
-      <div class="grid">
-        <div class="card three-col"><h3>Use cases</h3><p>Short-term crisis coverage • ICU overflow • trauma surge • high-acuity gaps • schedule stabilization.</p></div>
-        <div class="card three-col"><h3>What you gain</h3><p>Lower supervision burden • faster ramp-up • reduced adverse event risk • academic practice standards.</p></div>
-        <div class="card three-col"><h3>How we deploy</h3><p>Clinician-led readiness validation, scope alignment, and credentialing-forward workflows.</p></div>
-      </div>
-    </section>
-
-    <!-- PAS -->
-    <section class="section" id="pas">
-      <div class="section-head">
-        <h2>For Physician Assistants — Not Entry-Level Assignments</h2>
-        <p>We attract experienced clinicians and repel poor-fit placements. You get transparent expectations, skill-matched deployment, and mentorship from a doctorate-trained PA.</p>
-      </div>
-      <div class="grid">
-        <div class="card two-col"><h3>Who this is for</h3><p>Experienced acute care / EM / ICU PAs • procedure-comfortable clinicians • providers seeking advanced practice environments.</p></div>
-        <div class="card two-col"><h3>What you get</h3><p>Professional growth, not just placement • clear privileging expectations • assignments aligned to your skill set.</p></div>
-      </div>
-    </section>
-
-    <!-- MISSION -->
-    <section class="section" id="mission">
-      <div class="section-head">
-        <h2>Mission, Ethics & Patient Advocacy</h2>
-        <p>Elite care requires elite clinicians—and leadership that understands the bedside.</p>
-      </div>
-      <div class="grid">
-        <div class="card three-col"><h3>Patient-first</h3><p>Clinical decisions prioritize safety and outcomes over speed and volume.</p></div>
-        <div class="card three-col"><h3>Ethical staffing</h3><p>No misaligned placements. Readiness is validated and scope is respected.</p></div>
-        <div class="card three-col"><h3>Accountable autonomy</h3><p>Advocacy for PA autonomy with standards, mentorship, and responsibility.</p></div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="section-head">
-        <h2>Contact & Deployment Requests</h2>
-        <p>Streamlined intake for facilities and clinicians. This form is a starting point; build integrations as needed for your workflow.</p>
-      </div>
-      <div class="contact">
-        <form>
-          <div class="field">
-            <label for="type">I am a…</label>
-            <select id="type" name="type">
-              <option>Healthcare Facility</option>
-              <option>Physician Assistant</option>
-              <option>Credentialing / HR</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Full name" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" placeholder="name@organization.com" />
-          </div>
-          <div class="field">
-            <label for="org">Organization (if applicable)</label>
-            <input id="org" name="org" placeholder="Hospital / Group" />
-          </div>
-          <div class="field full">
-            <label for="msg">Message</label>
-            <textarea id="msg" name="msg" placeholder="Tell us what you need: coverage dates, unit type (Trauma ICU, MICU, ED, HM), expected acuity, procedural requirements, credentialing timeline…"></textarea>
-          </div>
-          <div class="field full">
-            <div class="form-actions">
-              <a class="btn primary" href="#top" onclick="alert('Demo form: wire up to your email/CRM endpoint.'); return false;">Submit Request</a>
-              <a class="btn" href="#top">Back to Top</a>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="wrap foot">
-      <div>© <span id="y"></span> Critical Insight Strategies · Clinician‑Led Critical Care Deployment</div>
-      <div class="powered">
-        <div class="badge">
-          <span>Powered by</span>
-          <!-- Replace with your final GLA logo asset path -->
-          <img src="assets/grand-line-analytics-logo.png" alt="Grand Line Analytics" />
-          <b>Grand Line Analytics</b>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Mobile drawer
-    const drawer = document.getElementById('drawer');
-    const openBtn = document.getElementById('openDrawer');
-    const closeBtn = document.getElementById('closeDrawer');
-
-    function openDrawer(){
-      if(!drawer) return;
-      drawer.classList.add('open');
-      drawer.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeDrawer(){
-      if(!drawer) return;
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
-
-    openBtn?.addEventListener('click', openDrawer);
-    closeBtn?.addEventListener('click', closeDrawer);
-
-    // Click backdrop to close
-    drawer?.addEventListener('click', (e) => {
-      if (e.target === drawer) closeDrawer();
+    document.querySelectorAll('header nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        body.classList.remove('nav-open');
+      });
     });
+  })();
+</script>
 
-    // Close after selecting a link
-    document.querySelectorAll('.drawerLink').forEach(a => {
-      a.addEventListener('click', () => closeDrawer());
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const landing = document.getElementById('landing');
+  const site = document.getElementById('site-content');
+  const btn = document.getElementById('enter-site');
+
+  const alreadyEntered = window.sessionStorage.getItem('cis-entered') === '1';
+  if (alreadyEntered) {
+    if (landing) landing.style.display = 'none';
+    if (site) site.classList.remove('hidden');
+    return;
+  }
+
+  if (btn && landing && site) {
+    btn.addEventListener('click', function () {
+      landing.classList.add('deploying');
+      window.sessionStorage.setItem('cis-entered', '1');
+      
+      setTimeout(function () {
+        landing.classList.add('hidden');
+      }, 400);
+      
+      setTimeout(function () {
+        landing.style.display = 'none';
+        site.classList.remove('hidden');
+      }, 900);
     });
-  </script>
+  }
+});
+</script>
+
 </body>
 </html>
