@@ -707,20 +707,45 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 14px;
     }
 
-    .footer-powered {
-        display: flex;
+    .gla-card {
+        display: inline-flex;
         align-items: center;
-        gap: 8px;
-        font-size: 10px;
-        opacity: 0.7;
-        margin-top: 8px;
+        gap: 10px;
+        background: linear-gradient(135deg, #064A52, #043940);
+        padding: 10px 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(216,168,66,0.4);
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .footer-powered img {
-        height: 24px;
+    .gla-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 15px rgba(216,168,66,0.2);
+        border-color: rgba(216,168,66,0.7);
+    }
+
+    .gla-label {
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #C9CED3;
+        opacity: 0.8;
+    }
+
+    .gla-logo {
+        height: 28px;
+        filter: drop-shadow(0 0 4px rgba(216,168,66,0.3));
+    }
+
+    .gla-name {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #D8A842;
     }
 
     /* ---------- RESPONSIVE ---------- */
@@ -1004,9 +1029,11 @@
 <footer>
     <div class="footer-inner">
         <div>© 2025 Critical Insight Strategies — Clinician-Led Critical Care Deployment</div>
-        <div class="footer-powered">
-            Powered by <strong>Grand Line Analytics</strong>
-        </div>
+        <a href="https://grandlineanalytics.com" target="_blank" class="gla-card">
+            <span class="gla-label">Powered by</span>
+            <img src="assets/grand-line-analytics-logo.png" alt="Grand Line Analytics" class="gla-logo">
+            <span class="gla-name">Grand Line Analytics</span>
+        </a>
     </div>
 </footer>
 
