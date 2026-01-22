@@ -13,9 +13,9 @@ cis-website/
 ├── facilities.html     # For Healthcare Facilities
 ├── pas.html            # For Physician Assistants
 ├── contact.html        # Contact & Deployment Requests form
-├── favicon-32x32.png   # Favicon
 └── assets/
     ├── cis-logo-transparent.png    # Main logo
+    ├── cis-favicon.png             # Browser tab favicon (32x32)
     └── dr-mary-herc.png            # Founder photo
 ```
 
@@ -43,7 +43,8 @@ cis-website/
 
 You need to add these images to the `assets/` folder:
 1. `cis-logo-transparent.png` - Your main CIS logo
-2. `dr-mary-herc.png` - Dr. Mary Herc's photo
+2. `cis-favicon.png` - 32x32 favicon for browser tab (can be a small version of your logo)
+3. `dr-mary-herc.png` - Dr. Mary Herc's photo
 
 ## Deployment
 
